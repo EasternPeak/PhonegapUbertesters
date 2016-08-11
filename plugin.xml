@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    id="com.ubertesters.sdk"
+    version="1.0.3">
+	
+	<name>ubertesters sdk</name>
+    <description>Cordova plugin for ubertesters</description>
+    <license>Apache 2.0 License</license>
+	
+	<engines>
+        <engine name="cordova" version=">=2.9.0" />
+    </engines>
+	
+	<js-module src="www/ubertesters.js" name="Ubertesters">
+        <clobbers target="Ubertesters" />
+    </js-module>
+    
+	 <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/widget">
+            <feature name="UbertestersCordova">
+                <param name="ios-package" value="CDVUbertesters"/>
+            </feature>
+        </config-file>
+        
+        <header-file src="src/ios/CDVUbertesters.h"/>
+        <source-file src="src/ios/CDVUbertesters.m" />
+        <framework src="src/ios/UbertestersSDK.framework" custom="true"/>
+
+        <!-- system frameworks -->
+        <framework src="AdSupport.framework" weak="true" />
+        <framework src="QuartzCore.framework" weak="true" />
+        <framework src="CoreImage.framework" weak="true" />
+        <framework src="SystemConfiguration.framework" weak="true" />
+        <framework src="CoreTelephony.framework" weak="true" />
+        <framework src="CoreLocation.framework" weak="true" />
+        <framework src="AudioToolbox.framework" weak="true" />
+        <framework src="OpenGLES.framework" weak="true" />
+        <framework src="CoreMotion.framework" weak="true" />
+    </platform>
+	
+	<!--android-->
+	<platform name="android">	
+	
+		<config-file target="res/xml/config.xml" parent="/*">
+            <feature name="UbertestersCordova">
+                <param name="android-package" value="com.ubertesters.sdk.UbertestersCordova"/>
+            </feature>
+        </config-file>
+	
+		<config-file target="AndroidManifest.xml" parent="/manifest">
+			<uses-permission android:name="android.permission.GET_TASKS"/>
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+			<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+		</config-file>
+		
+		<source-file src="src/android/libs/ubertesters.sdk.android.jar" target-dir="libs" />
+		<source-file src="src/android/UbertestersCordova.java" target-dir="src/com/ubertesters/sdk" />
+		
+	</platform>
+</plugin>
