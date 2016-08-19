@@ -25,17 +25,17 @@
     UbertestersOptions initOptions = UbertestersOptionsDefault;
     if(command.arguments.count >= 1){
         NSString *lockingMode = command.arguments[0];
-        if([lockingMode isEqualToString:@"LockingModeDisableUbertestersIfBuildNotExist"]){
-            initOptions |= UbertestersOptionsLockingModeDisableUbertestersIfBuildNotExist;
+        if([lockingMode isEqualToString:@"DisableUbertesters"]){
+            initOptions |= UbertestersOptionsDisableUbertesters;
         }
-        if([lockingMode isEqualToString:@"LockingModeAppIfBuildNotExist"]){
-            initOptions |= UbertestersOptionsLockingModeAppIfBuildNotExist;
+        if([lockingMode isEqualToString:@"LockApplication"]){
+            initOptions |= UbertestersOptionsLockApplication;
         }
     }
     if (command.arguments.count == 2) {
         NSString *activationMode = command.arguments[1];
-        if([activationMode isEqualToString:@"Slider"]){
-            initOptions |= UbertestersOptionsSlider;
+        if([activationMode isEqualToString:@"Widget"]){
+            initOptions |= UbertestersOptionsWidget;
         }
         if([activationMode isEqualToString:@"Shake"]){
             initOptions |= UbertestersOptionsShake;
@@ -47,11 +47,6 @@
     NSLog(@"%i",initOptions);
     [[Ubertesters shared] initializeWithOptions:initOptions];
     
-    CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
-    [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
-}
-
--(void)setIsIgnored:(CDVInvokedUrlCommand*)command{
     CDVPluginResult* pluginResult = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
     [self.commandDelegate sendPluginResult:pluginResult callbackId:command.callbackId];
 }
