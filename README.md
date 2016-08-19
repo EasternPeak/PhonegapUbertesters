@@ -1,18 +1,18 @@
 
 To add this plugin just type:
 
-	phonegap plugin add https://github.com/Ubertesters/cordova-ubertesters.git
+	cordova plugin add https://github.com/EasternPeak/PhonegapUbertesters.git
 			
 To remove this plugin type:
 	
-	phonegap plugin remove com.ubertesters.sdk
+	cordova plugin remove com.ubertesters.sdk
 
 -- IOS integration
-    1.Add "Ubertesters Project ID" to your app's "Info.plist" with key "ubertesters_project_id"
+    1.Add "Ubertesters Organization token" to your app's "Info.plist" with key "ubertesters_organization_token"
 
     Don't forget to build your application with:
 
-        phonegap build ios
+        cordova build ios
 
     2.
     Use Ubertesters initialize function in the "deviceready" function
@@ -40,14 +40,14 @@ To remove this plugin type:
     Examples:
 
     1...
-        ubertesters.initialize(null, null, ['LockingModeDisableUbertestersIfBuildNotExist']);
+        ubertesters.initialize(null, null, ['DisableUbertesters']);
 
     2...
-        ubertesters.initialize(null, null, ['LockingModeDisableUbertestersIfBuildNotExist', 'Shake']);
+        ubertesters.initialize(null, null, ['DisableUbertesters', 'Shake']);
 
     3...
     cordova.exec(null, null, "UbertestersCordova", "initialize",
-    ['LockingModeDisableUbertestersIfBuildNotExist', 'Shake']);
+    ['DisableUbertesters', 'Shake']);
 
 --ANDROID INTEGRATION:
 
@@ -80,19 +80,21 @@ To remove this plugin type:
 
 Available LockingMode (Must be the third argument): 
 
-LockingModeDisableUbertestersIfBuildNotExist
+    DisableUbertesters
 If build not exists Ubertesters will be disabled.
-LockingModeLockAppIfBuildNotExist
+
+    LockApplication
 If build not exists tested application will be locked.
 
 Available ActivationMode (Must be the fourth argument):
 
-Slider //(deprecated)
-Widget
+    Widget
 Mode with displaying Ubertesters button.
-Shake
+
+    Shake
 Mode without Ubertesters button. User has to shake device to open Ubertesters page.
-Manually
+
+    Manually
 Mode without Ubertesters button. Developer has to use functions ShowUtPage() and HideUtPage().
 
 All other Ubertesters functions you can see in com.ubertesters.sdk/www/ubertesters.js
