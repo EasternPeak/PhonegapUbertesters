@@ -63,7 +63,7 @@ To remove this plugin type:
 	Also make sure your specify correct android:versionCode and android:versionName for your build.
 
 	Don't forget to build your application with:
-		phonegap build android
+		cordova build android
 
     Also, please add UT intitialization into your Application class:
 
