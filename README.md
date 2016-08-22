@@ -38,7 +38,7 @@ To remove this plugin type:
         cordova.exec(null, null, "UbertestersCordova", "initialize", [/*LOCKING_MODE*/, /*ACTIVATION_MODE*/]);
 
     Examples:
-
+  
     1...
         ubertesters.initialize(null, null, ['DisableUbertesters']);
 
