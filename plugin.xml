@@ -37,6 +37,9 @@
         <framework src="AudioToolbox.framework" weak="true" />
         <framework src="OpenGLES.framework" weak="true" />
         <framework src="CoreMotion.framework" weak="true" />
+        <framework src="MediaPlayer.framework" weak="true" />
+        <framework src="libsqlite3.tbd" weak="true" />
+        <framework src="libz.tbd" weak="true" />
     </platform>
 	
 	<!--android-->
