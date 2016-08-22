@@ -26,22 +26,22 @@
     if(command.arguments.count >= 1){
         NSString *lockingMode = command.arguments[0];
         if([lockingMode isEqualToString:@"DisableUbertesters"]){
-            initOptions |= UbertestersOptionsDisableUbertesters;
+            initOptions |= UbertestersLockingModeDisableUbertesters;
         }
         if([lockingMode isEqualToString:@"LockApplication"]){
-            initOptions |= UbertestersOptionsLockApplication;
+            initOptions |= UbertestersLockingModeLockApplication;
         }
     }
     if (command.arguments.count == 2) {
         NSString *activationMode = command.arguments[1];
         if([activationMode isEqualToString:@"Widget"]){
-            initOptions |= UbertestersOptionsWidget;
+            initOptions |= UbertestersActivationModeWidget;
         }
         if([activationMode isEqualToString:@"Shake"]){
-            initOptions |= UbertestersOptionsShake;
+            initOptions |= UbertestersActivationModeShake;
         }
         if([activationMode isEqualToString:@"Manual"]){
-            initOptions |= UbertestersOptionsManual;
+            initOptions |= UbertestersActivationModeManual;
         }
     }
     NSLog(@"%i",initOptions);
