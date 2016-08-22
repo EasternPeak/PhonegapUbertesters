@@ -1,0 +1,33 @@
+{
+  "name": "Ubertesters",
+  "version": "2.0.6",
+  "description": "Cordova plugin for ubertesters",
+  "cordova": {
+    "id": "com.ubertesters.sdk",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EasternPeak/PhonegapUbertesters.git"
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-ios",
+    "cordova-android"
+  ],
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=2.9.0"
+    }
+  ],
+  "author": "Ubertesters",
+  "license": "Apache 2.0 License",
+  "bugs": {
+    "url": "https://github.com/EasternPeak/PhonegapUbertesters/issues"
+  },
+  "homepage": "https://github.com/EasternPeak/PhonegapUbertesters#readme"
+}

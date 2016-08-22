@@ -1,8 +1,12 @@
 
 To add this plugin just type:
 
+	cordova plugin add Ubertesters
+	
+or
+
 	cordova plugin add https://github.com/EasternPeak/PhonegapUbertesters.git
-			
+   		
 To remove this plugin type:
 	
 	cordova plugin remove com.ubertesters.sdk
